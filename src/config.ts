@@ -7,5 +7,5 @@ export const SITE: Site = {
 	description: "A sane starting point for a new Astro project",
 	title: "AstroPaper",
 	image: "site-preview.jpg", // look in /public
-	themeColour: "#000"
+	themeColour: "#162334"
 };
