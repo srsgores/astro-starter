@@ -1,5 +1,5 @@
 import {SITE} from "@config";
-import {defineCollection, z} from "astro:content";
+import {defineCollection, type ImageFunction, z} from "astro:content";
 
 const UNCATEGORIZED_TAG = "uncategorized";
 const OG_IMAGE_CONSTRAINTS = {
@@ -8,8 +8,8 @@ const OG_IMAGE_CONSTRAINTS = {
 };
 
 export enum Status {
-	Published,
-	Draft
+	Published = "Published",
+	Draft = "Draft"
 }
 
 const blogPostSchema = {
@@ -17,22 +17,28 @@ const blogPostSchema = {
 	description: z.string(),
 	author: z.string().default(SITE.author),
 	datePublished: z.date().optional(),
+	dateModified: z.date().default(new Date()),
 	status: z.nativeEnum(Status),
 	tags: z.array(z.string()).default([UNCATEGORIZED_TAG]),
 	canonicalURL: z.string().url().optional()
 };
 
-const validateOGImage = function(image: {width: number; height: number}) {
+const validateImage = function(image: {width: number; height: number}) {
 	return image.width >= OG_IMAGE_CONSTRAINTS.width && image.height >= OG_IMAGE_CONSTRAINTS.height;
 };
 
-const INVALID_OG_IMAGE_DIMENSIONS_MESSAGE = `OpenGraph image must be at least ${OG_IMAGE_CONSTRAINTS.width} X ${OG_IMAGE_CONSTRAINTS.height} pixels!`;
+const validatedImage = function(image: ImageFunction, constraints: {minimumHeight: number; minimumWidth: number} = {minimumWidth: 600, minimumHeight: 1000}) {
+	const incorrectSizeErrorMessage = `image must be at least ${constraints.minimumWidth} X ${constraints.minimumHeight} pixels!`;
+	return image().refine(validateImage, {message: incorrectSizeErrorMessage}).or(z.string());
+};
+
 const blog = defineCollection({
 	type: "content",
-	schema: function({image}) {
+	schema: function({image: imageFunction}) {
 		return z.object({
 			...blogPostSchema,
-			ogImage: image().refine(validateOGImage, {message: INVALID_OG_IMAGE_DIMENSIONS_MESSAGE}).or(z.string()).optional()
+			image: validatedImage(imageFunction).optional(),
+			ogImage: validatedImage(imageFunction, {minimumWidth: OG_IMAGE_CONSTRAINTS.width, minimumHeight: OG_IMAGE_CONSTRAINTS.height}).optional()
 		});
 	}
 });

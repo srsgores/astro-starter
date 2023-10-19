@@ -1,0 +1,17 @@
+---
+import {Image} from "astro:assets";
+import PostMeta from "./PostMeta.astro";
+const {post, ...props} = Astro.props;
+const {title, image, description} = post.data;
+---
+
+<header class="post-header" {...props}>
+	<h1 class="post-title" itemprop="headline">{title}</h1>
+	<p itemprop="description">{description}</p>
+	{image && <figure class="post-image">
+		<figcaption class="visuallyhidden">{title}</figcaption>
+		<Image src={image} alt={description} itemprop="image"/>
+	</figure>}
+	<PostMeta post={post}/>
+	<slot/>
+</header>

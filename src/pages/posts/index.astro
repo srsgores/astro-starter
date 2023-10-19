@@ -1,0 +1,16 @@
+---
+import Layout from "@layouts/Layout.astro";
+import getSortedPosts from "@utils/get-sorted-posts";
+
+import {getCollection} from "astro:content";
+import PostList from "../../components/blog/PostList.astro";
+
+const posts = await getCollection("blog");
+
+const sortedPosts = getSortedPosts(posts);
+
+---
+
+<Layout title="Blog">
+	<PostList posts={sortedPosts}/>
+</Layout>

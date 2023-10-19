@@ -1,0 +1,14 @@
+---
+import PostHeader from "./PostHeader.astro";
+const {posts, ...props} = Astro.props;
+---
+
+<ul class="post-list" {...props}>
+	{posts.map((post) => (
+		<li class="post-container">
+			<a href={`/posts/${post.slug}`}>
+				<PostHeader post={post}/>
+			</a>
+		</li>
+	))}
+</ul>

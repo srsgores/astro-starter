@@ -1,0 +1,23 @@
+---
+import Layout from "@layouts/Layout.astro";
+import {getCollection} from "astro:content";
+import Post from "../../../components/blog/Post.astro";
+import {getPublishedPosts} from "@utils/get-sorted-posts";
+const post = Astro.props;
+const {title, description, image, ogImage, datePublished, dateModified, author} = post.data;
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog");
+	const publishedPosts = getPublishedPosts(posts).map(function(post) {
+		return {
+			params: {slug: post.slug},
+			props: post
+		};
+	});
+	return publishedPosts;
+}
+---
+
+<Layout title={title} description={description} image={image} author={author}>
+	<Post post={post}/>
+</Layout>

@@ -1,0 +1,27 @@
+---
+import {SITE} from "@config";
+export interface Props {
+	date: Date;
+}
+
+const {...props} = Astro.props;
+let {date} = Astro.props;
+
+if (!date?.toLocaleDateString) {
+	console.error(`expected date but got ${typeof date}`);
+	date = new Date();
+}
+
+const localizedDate = date.toLocaleDateString(SITE.locale, {
+	year: "numeric",
+	month: "short",
+	day: "numeric"
+});
+
+const formattedDate = date.toISOString();
+---
+
+<time datetime={formattedDate} {...props}>
+	{localizedDate}
+	<slot/>
+</time>
