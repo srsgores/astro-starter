@@ -1,13 +1,13 @@
 ---
 import FormattedDate from "../FormattedDate.astro";
-const {post, ...props} = Astro.props;
+const {post, class: classes, ...props} = Astro.props;
 const {datePublished, dateModified, title, author, tags} = post.data;
 const hasTags = Array.isArray(tags) && tags.length;
 import {SITE} from "@config";
 const [firstName, lastName] = SITE.author.split(" ");
 ---
 
-<dl class="post-meta" {...props}>
+<dl class="post-meta" class:list={[classes]} {...props}>
 	<dt class="published-label">Published</dt>
 	<dd><FormattedDate date={datePublished} itemprop="datePublished"/></dd>
 	<dt class="published-label">Last Updated</dt>
@@ -30,3 +30,10 @@ const [firstName, lastName] = SITE.author.split(" ");
 		<span itemprop="familyName">${lastName}</span>
 	</dd>
 </dl>
+
+<style>
+	.post-meta {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+</style>

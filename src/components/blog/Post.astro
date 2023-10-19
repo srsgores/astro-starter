@@ -2,15 +2,21 @@
 import {Image} from "astro:assets";
 import PostMeta from "./PostMeta.astro";
 import PostHeader from "./PostHeader.astro";
-const {post, ...props} = Astro.props;
+const {post, class: classes, ...props} = Astro.props;
 const {Content} = await post.render();
 ---
 
-<article class="post" {...props}>
+<article class="post" class:list={[classes]} {...props}>
 	<link itemprop="mainEntityOfPage" href={Astro.url}>
-	<PostHeader post={post}/>
-	<div class="post-content prose" itemprop="articleBody">
+	<PostHeader class="contained" post={post}/>
+	<div class="post-content prose contained" itemprop="articleBody">
 		<Content/>
 		<slot/>
 	</div>
 </article>
+
+<style>
+	.post {
+
+	}
+</style>

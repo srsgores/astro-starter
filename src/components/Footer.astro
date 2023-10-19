@@ -1,7 +1,7 @@
 ---
-const {...props} = Astro.props;
+const {class: classes, ...props} = Astro.props;
 ---
-<footer role="contentinfo" {...props}>
+<footer role="contentinfo" class:list={[classes]} {...props}>
 	<p><small>Made with <a href="https://astro.build" target="_blank" rel="noreferrer">Astro</a></small></p>
 	<slot/>
 </footer>

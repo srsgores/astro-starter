@@ -1,9 +1,9 @@
 ---
-const {...props} = Astro.props;
+const {class: classes, ...props} = Astro.props;
 const hasContent = Astro.slots.has("default");
 ---
 
-<nav class="navigation" {...props}>
+<nav class="navigation" class:list={[classes]} {...props}>
 	{hasContent && <ul class="navigation-links">
 		<slot/>
 	</ul>}

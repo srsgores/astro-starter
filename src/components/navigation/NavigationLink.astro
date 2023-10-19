@@ -3,14 +3,14 @@ import type {HTMLAttributes} from "astro/types";
 
 type Props = HTMLAttributes<"a">;
 
-const {href, class: className, ...props} = Astro.props;
+const {href, class: classes, ...props} = Astro.props;
 
 const {pathname} = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <li class="navigation-link-container">
-	<a href={href} class:list={["navigation-link", className, {active: isActive}]} {...props} aria-current={isActive ? "page" : null}>
+	<a href={href} class="navigation-link" class:list={[classes, {active: isActive}]} {...props} aria-current={isActive ? "page" : null}>
 		<slot/>
 	</a>
 </li>

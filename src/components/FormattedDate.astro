@@ -4,7 +4,7 @@ export interface Props {
 	date: Date;
 }
 
-const {...props} = Astro.props;
+const {class: classes, ...props} = Astro.props;
 let {date} = Astro.props;
 
 if (!date?.toLocaleDateString) {
@@ -21,7 +21,7 @@ const localizedDate = date.toLocaleDateString(SITE.locale, {
 const formattedDate = date.toISOString();
 ---
 
-<time datetime={formattedDate} {...props}>
+<time datetime={formattedDate} class:list={[classes]} {...props}>
 	{localizedDate}
 	<slot/>
 </time>
