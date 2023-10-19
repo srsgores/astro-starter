@@ -11,6 +11,10 @@ export default defineConfig({
 	markdown: {
 		remarkPlugins: [
 			remarkToc, [remarkCollapse, {test: "Table of Contents", summary: "Table of Contents"}]
-		]
+		],
+		shikiConfig: {
+			theme: "one-dark-pro",
+			wrap: true
+		}
 	}
 });
