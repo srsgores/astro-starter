@@ -1,0 +1,148 @@
+body {
+	font-family: var(--base-font-family), var(--base-font-family-fallback);
+	line-height: var(--base-line-height);
+	color: var(--base-text-colour);
+}
+
+h1 {
+	font-size: 3.052em;
+}
+
+h2 {
+	font-size: 2.441em;
+}
+
+h3 {
+	font-size: 1.953em;
+}
+
+h4 {
+	font-size: 1.563em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
+strong, b {
+	font-weight: 700;
+}
+
+a {
+	color: var(--global-colour-accent2);
+}
+
+a:hover {
+	color: var(--global-colour-accent2);
+}
+
+table {
+	width: 100%;
+	--table-cell-padding: 0.5rem 1rem;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+}
+
+blockquote {
+	border-inline-start: 0.25rem solid var(--global-colour-primary);
+	padding-block-end: 2rem;
+	font-size: 1.333em;
+}
+
+hr {
+	border-block-start: 1px solid;
+}
+
+.prose ol:not([class]), .prose ul:not([class]) {
+	padding: 0 1.5rem;
+	list-style: initial;
+}
+
+mark {
+	background-color: var(--global-colour-highlight);
+	display: inline-block;
+	padding-inline: 0.4rem;
+}
+
+.title {
+	font-size: clamp(2rem, 4.5rem, calc(3vmin + 2rem));
+	line-height: 1.4;
+}
+
+.title.spaced {
+	--flow-block-spacing: 3.5rem;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+	margin-block: var(--flow-block-spacing);
+}
+
+.prose p ~ p, .prose p ~ ol, .prose p ~ img {
+	margin-block-start: 1rem;
+}
+
+.prose a {
+	font-weight: bold;
+	transition: 0.3s ease-in-out;
+	color: var(--global-colour-primary);
+	text-decoration: underline;
+	text-underline-offset: 0.4rem;
+}
+
+.prose a:visited {
+	opacity: 0.95;
+}
+
+.prose a:hover, .prose a:active {
+	opacity: 1;
+	color: var(--global-colour-primary);
+	text-underline-offset: 0.25rem;
+}
+
+.prose * + table {
+	margin-block-start: 1.5rem;
+}
+
+.prose table + * {
+	margin-block-start: 1rem;
+}
+
+.prose table td:not(:empty) {
+	background-color: hsla(0, 0%, 0%, 0.05);
+}
+
+.prose table td, .prose table th {
+	padding: var(--table-cell-padding);
+}
+
+.prose tbody td {
+	border: 1px solid hsla(0, 0%, 0%, 0.17);
+}
+
+.prose table th sup {
+	font-size: 0.65em;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.prose table th * + sup {
+	margin-inline-start: 1em;
+}
+
+.prose table th {
+	font-weight: bold;
+}
+
+.prose abbr[title] {
+	cursor: help;
+	text-decoration: revert-layer;
+}

@@ -1,0 +1,45 @@
+:root {
+	--grid-column-width: 20rem;
+	--grid-gap: 1rem;
+	--padding: 1rem;
+	--layout-max-width: 68rem;
+}
+
+.visuallyhidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.centred {
+	text-align: center;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--grid-column-width), 1fr));
+	gap: var(--grid-gap);
+	place-items: center;
+}
+
+.contained {
+	max-width: var(--layout-max-width);
+	margin-inline: auto;
+}
+
+.text-align-end {
+	text-align: end;
+}
+
+.spaced {
+	margin-block: 5rem;
+}
+
+.padded {
+	padding: var(--padding);
+}

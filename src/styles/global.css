@@ -1,0 +1,22 @@
+:root {
+	--base-font-family: "Segoe UI";
+	--base-font-family-fallback: sans-serif;
+	--base-line-height: 1.75;
+	--base-font-weight: 400;
+	--base-text-colour: #FFFFFF;
+	--heading-font-weight: inherit;
+	--heading-line-height: 1.3;
+
+	/* Colours */
+	--global-colour-primary: #5A1C6B;
+	--global-colour-secondary: #54595F;
+	--global-colour-text: #7A7A7A;
+	--global-colour-accent: #1E95FF;
+	--global-colour-highlight: #FFFF00;
+	--global-colour-accent2: #FF0059;
+
+	--global-background-colour: #2D2D2D;
+	/* flow */
+	--flow-block-spacing: 2.5rem;
+	--flow-inline-spacing: 2.5rem;
+}
