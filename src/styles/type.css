@@ -49,7 +49,7 @@ img {
 
 blockquote {
 	border-inline-start: 0.25rem solid var(--global-colour-primary);
-	padding-block-end: 2rem;
+	padding-inline-start: 2rem;
 	font-size: 1.333em;
 }
 
@@ -145,4 +145,8 @@ mark {
 .prose abbr[title] {
 	cursor: help;
 	text-decoration: revert-layer;
+}
+
+.prose blockquote + * {
+	margin-block-start: var(--flow-block-spacing);
 }
