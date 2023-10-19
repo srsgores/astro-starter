@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^3.0.3",
+    "@astrojs/rss": "^3.0.0",
     "astro": "^3.3.0",
     "the-new-css-reset": "^1.11.0"
   },
