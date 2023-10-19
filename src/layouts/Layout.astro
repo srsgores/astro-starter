@@ -6,7 +6,7 @@ import "@styles/type.css";
 import "@styles/utilities.css";
 import {SITE} from "@config";
 import {ViewTransitions} from "astro:transitions";
-import {generateOGImage} from "../utils/generate-og-image";
+import {generateOGImage} from "@utils/generate-og-image";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -53,6 +53,7 @@ const previewImage = new URL(image ?? generateOGImage({
 		<!-- Open Graph / Facebook -->
 		<meta property="og:title" content={title}/>
 		<meta property="og:description" content={description}/>
+		<meta property="og:type" content="website"/>
 		<meta property="og:url" content={canonicalURL}/>
 		<meta property="og:image" content={previewImage}/>
 
