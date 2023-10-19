@@ -10,7 +10,7 @@ export default defineConfig({
 	adapter: netlify(),
 	markdown: {
 		remarkPlugins: [
-			remarkToc, [remarkCollapse, {test: "Table of contents", summary: "Table of Contents"}]
+			remarkToc, [remarkCollapse, {test: "Table of Contents", summary: "Table of Contents"}]
 		]
 	}
 });
