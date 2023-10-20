@@ -83,7 +83,9 @@ mark {
 .prose h4,
 .prose h5,
 .prose h6 {
+	font-weight: bold;
 	margin-block: var(--flow-block-spacing);
+	line-height: calc(var(--base-line-height) * 0.85);
 }
 
 .prose p ~ p, .prose p ~ ol, .prose p ~ img {
@@ -96,6 +98,16 @@ mark {
 	color: var(--global-colour-primary);
 	text-decoration: underline;
 	text-underline-offset: 0.4rem;
+}
+
+.prose img, .prose picture {
+	max-width: 100%;
+}
+
+.prose details summary {
+	cursor: pointer;
+	display: revert;
+	list-style: revert;
 }
 
 .prose a:visited {

@@ -12,6 +12,24 @@ const {title, image, description} = post.data;
 		<figcaption class="visuallyhidden">{title}</figcaption>
 		<Image src={image} alt={description} itemprop="image"/>
 	</figure>}
-	<PostMeta post={post}/>
+	<PostMeta class="post-meta" post={post}/>
 	<slot/>
 </header>
+
+<style>
+	[itemprop="headline"], [itemprop="description"] {
+		margin-block-end: var(--flow-block-spacing);
+	}
+	[itemprop="headline"] {
+		line-height: 1.5;
+		font-weight: bold;
+	}
+	[itemprop="description"] {
+		font-size: 1.75rem;
+		font-weight: lighter;
+		letter-spacing: 0.04em;
+	}
+	.post-meta {
+		margin-block: 1.5rem;
+	}
+</style>

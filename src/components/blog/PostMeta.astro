@@ -17,7 +17,7 @@ const [firstName, lastName] = SITE.author.split(" ");
 		<dd>
 			<ul class="tags">
 				{tags.map((tag) => (
-					<li>{tag}</li>
+					<li class="tag"><span role="presentation" class="tag-icon">🏷️</span>{tag}</li>
 				))}
 			</ul>
 		</dd>
@@ -34,6 +34,20 @@ const [firstName, lastName] = SITE.author.split(" ");
 <style>
 	.post-meta {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: max-content 1fr;
+		gap: 1rem;
+		font-size: 0.98em;
+	}
+	.post-meta dt {
+		font-weight: bold;
+	}
+	.tag {
+		display: inline-block;
+	}
+	.tag + .tag {
+		margin-inline-start: 1rem;
+	}
+	.tag-icon {
+		margin-inline-end: 0.35em;
 	}
 </style>

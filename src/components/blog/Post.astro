@@ -6,11 +6,17 @@ const {post, class: classes, ...props} = Astro.props;
 const {Content} = await post.render();
 ---
 
-<article class="post" class:list={[classes]} {...props}>
+<article class="post contained padded" class:list={[classes]} {...props}>
 	<link itemprop="mainEntityOfPage" href={Astro.url}>
-	<PostHeader class="contained" post={post}/>
-	<div class="post-content prose contained" itemprop="articleBody">
+	<PostHeader post={post}/>
+	<div class="post-content prose" itemprop="articleBody">
 		<Content/>
 		<slot/>
 	</div>
 </article>
+
+<style>
+	.post-content {
+		padding-block: 1.5rem;
+	}
+</style>

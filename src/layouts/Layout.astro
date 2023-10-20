@@ -70,9 +70,9 @@ const previewImage = new URL(image ?? generateOGImage({
 	</head>
 	<body>
 		<Header aria-label="Site header"/>
-		<main>
+		<main class="padded">
 			<slot/>
 		</main>
-		<Footer aria-label="Site footer with ownership metadata"/>
+		<Footer class="padded centred" aria-label="Site footer with ownership metadata"/>
 	</body>
 </html>
