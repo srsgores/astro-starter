@@ -1,7 +1,14 @@
 ---
+import Navigation from "./navigation/Navigation.astro";
 const {class: classes, ...props} = Astro.props;
+import {SITE} from "@config";
+import NavigationLink from "./navigation/NavigationLink.astro";
 ---
 
 <header role="banner" class="header" class:list={[classes]} {...props}>
+	<Navigation>
+		<NavigationLink href="/">{SITE.title}</NavigationLink>
+		<NavigationLink href="/posts">Blog</NavigationLink>
+	</Navigation>
 	<slot/>
 </header>
