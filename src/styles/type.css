@@ -28,22 +28,17 @@ strong, b {
 	font-weight: 700;
 }
 
-a {
-	color: var(--global-colour-accent2);
-}
-
-a:hover {
-	color: var(--global-colour-accent2);
-}
-
 table {
 	width: 100%;
 	--table-cell-padding: 0.5rem 1rem;
 }
 
-img {
+img, video {
 	max-width: 100%;
 	height: auto;
+}
+
+img {
 	border-radius: 0.5rem;
 }
 
@@ -94,6 +89,9 @@ mark {
 
 .prose a {
 	font-weight: bold;
+}
+
+.prose a, .link {
 	transition: 0.3s ease-in-out;
 	color: var(--global-colour-primary);
 	text-decoration: underline;
@@ -110,21 +108,21 @@ mark {
 	list-style: revert;
 }
 
-.prose a:visited {
+.prose a:visited, .link:visited {
 	opacity: 0.95;
 }
 
-.prose a:hover, .prose a:active {
+.prose a:hover, .link:hover, .prose a:active, .link:active {
 	opacity: 1;
 	color: var(--global-colour-primary);
-	text-underline-offset: 0.25rem;
+	text-underline-offset: 0.25em;
 }
 
-.prose * + table {
+.prose * + table, .prose * + video {
 	margin-block-start: 1.5rem;
 }
 
-.prose table + * {
+.prose table + *, .prose * + blockquote {
 	margin-block-start: 1rem;
 }
 
@@ -156,9 +154,13 @@ mark {
 
 .prose abbr[title] {
 	cursor: help;
-	text-decoration: revert-layer;
+	text-decoration: revert;
 }
 
-.prose blockquote + * {
+.prose blockquote + *, .prose video + * {
 	margin-block-start: var(--flow-block-spacing);
+}
+
+.astro-code {
+	padding: 1rem;
 }

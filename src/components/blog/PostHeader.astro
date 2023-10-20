@@ -17,8 +17,12 @@ const {title, image, description} = post.data;
 </header>
 
 <style>
+	:global(a .post-header:hover [itemprop="headline"], a .post-header:hover [itemprop="description"]) {
+		text-decoration: underline;
+	}
 	[itemprop="headline"], [itemprop="description"] {
 		margin-block-end: var(--flow-block-spacing);
+		text-underline-offset: 0.4em;
 	}
 	[itemprop="headline"] {
 		line-height: 1.5;

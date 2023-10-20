@@ -1,6 +1,6 @@
 ---
 import PostHeader from "./PostHeader.astro";
-const {posts, classes, ...props} = Astro.props;
+const {posts, class: classes, ...props} = Astro.props;
 ---
 
 <ul class="post-list" class:list={[classes]} {...props}>
