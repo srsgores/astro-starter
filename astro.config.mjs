@@ -8,6 +8,7 @@ import rehypeExternalLinks from "rehype-external-links";
 // https://astro.build/config
 export default defineConfig({
 	site: SITE.url,
+	output: "server",
 	adapter: netlify(),
 	markdown: {
 		rehypePlugins: [
