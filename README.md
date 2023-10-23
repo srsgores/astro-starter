@@ -1,33 +1,25 @@
-# Astro Starter Kit: Minimal
+# Astro Starter Kit: Sane
+Lightweight [Astro](https://astro.build) template for creating websites with *sensible* defaults:
 
-```sh
-npm create astro@latest -- --template minimal
-```
+* SEO and metadata optimization
+* Site configuration via `config.ts`
+* Blog preconfigured within the `/src/content/blog` directory
+* Vanilla CSS (no Tailwind)
+* Logical properties when possible for CSS
+* **Zero javascript** out of the box, relying on `.Astro` files soley
+* `<ViewTransitions/>` enabled out of the box
+* Sitemaps and RSS preconfigured
+* Site previews, which default to `/public/site-preview.jpg` (you'll have to create this file by taking a screenshot)
+* `prettier` for automatically formatting
+* Basic building blocks for site navigation, header, and footer
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Getting Started
+Deploy to Netlify:
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/srsgores/astro-starter?NODE_VERSION=18)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/srsgores/astro-starter/tree/latest/examples/sane)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/srsgores/astro-starter/tree/latest/examples/sane)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/srsgores/astro-starter?devcontainer_path=.devcontainer/sane/devcontainer.json)
 
 ## 🧞 Commands
 
