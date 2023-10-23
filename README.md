@@ -1,6 +1,8 @@
 # Astro Starter Kit
 Lightweight [Astro](https://astro.build) template for creating websites with **accessible**, *optimized** defaults:
 
+![logo](public/favicon.svg)
+
 * SEO and metadata optimization
 * Site configuration via `config.ts`
 * Blog preconfigured within the `/src/content/blog` directory
