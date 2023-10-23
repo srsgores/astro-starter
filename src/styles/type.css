@@ -52,10 +52,12 @@ hr {
 	border-block-start: 1px solid;
 }
 
-.prose ol:not([class]), .prose ul:not([class]) {
+.prose ul, .prose ol {
 	padding: 0 1.5rem;
-	list-style: initial;
+	list-style: reset;
+	padding-inline-start: 1rem;
 }
+
 
 mark {
 	background-color: var(--global-colour-highlight);
@@ -79,7 +81,8 @@ mark {
 .prose h5,
 .prose h6 {
 	font-weight: bold;
-	margin-block: var(--flow-block-spacing);
+	margin-block-start: var(--flow-block-spacing);
+	margin-block-end: calc(var(--flow-block-spacing) / 2);
 	line-height: calc(var(--base-line-height) * 0.85);
 }
 
@@ -95,7 +98,11 @@ mark {
 	transition: 0.3s ease-in-out;
 	color: var(--global-colour-primary);
 	text-decoration: underline;
-	text-underline-offset: 0.4rem;
+	text-underline-offset: 0.5rem;
+}
+
+.prose code {
+	font-family: monospace;
 }
 
 .prose img, .prose picture {
@@ -118,7 +125,7 @@ mark {
 	text-underline-offset: 0.25em;
 }
 
-.prose * + table, .prose * + video {
+.prose * + table, .prose * + video, .prose * + ul, .prose * + ol {
 	margin-block-start: 1.5rem;
 }
 
@@ -163,4 +170,22 @@ mark {
 
 .astro-code {
 	padding: 1rem;
+}
+
+
+.prose .contains-task-list {
+	list-style: initial;
+}
+
+.prose .task-list-item input[type="checkbox"] {
+	appearance: auto;
+	cursor: pointer;
+	vertical-align: middle;
+	width: 1em;
+	height: 1em;
+	margin-inline-end: 0.15em;
+}
+
+.prose .task-list-item input[type="checkbox"]:disabled {
+	cursor: not-allowed;
 }
