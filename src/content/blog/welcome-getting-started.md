@@ -22,6 +22,8 @@ You will find the `index.astro` page intentionally empty. Astro starter is inten
 * [x] `.astro` files and **only** `.astro` files. You might find some `.ts` files lying around, but Astro kind of forces that on you 🤷
 * [x] [Netlify](https://netlify.com) integration for SSR out of the box (if you don't want this, then remove the `netlify` adapter)
 
+## Table of Contents
+
 ## Markdown Features
 
 * If you include the text "Table of Contents" as a heading in your markdown documents, then `remark` will automatically generate a table of contents for you like this.
