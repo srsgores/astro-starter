@@ -1,6 +1,8 @@
 # Astro Starter Kit
 Lightweight [Astro](https://astro.build) template for creating websites with **accessible**, *optimized* defaults:
 
+[Live demo](https://astrostarter.netlify.app/)
+
 ![logo](public/favicon.svg)
 
 * SEO and metadata optimization
