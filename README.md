@@ -1,5 +1,5 @@
 # Astro Starter Kit
-Lightweight [Astro](https://astro.build) template for creating websites with **accessible**, *optimized** defaults:
+Lightweight [Astro](https://astro.build) template for creating websites with **accessible**, *optimized* defaults:
 
 ![logo](public/favicon.svg)
 
