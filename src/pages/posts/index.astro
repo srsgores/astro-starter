@@ -8,7 +8,7 @@ import PostList from "../../components/blog/PostList.astro";
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
-
+export const prerender = true;
 ---
 
 <Layout title="Blog">

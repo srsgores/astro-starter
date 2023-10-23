@@ -6,6 +6,8 @@ import {getPublishedPosts} from "@utils/get-sorted-posts";
 const post = Astro.props;
 const {title, description, image, ogImage, datePublished, dateModified, author} = post.data;
 
+export const prerender = true;
+
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
 	const publishedPosts = getPublishedPosts(posts).map(function(post) {
