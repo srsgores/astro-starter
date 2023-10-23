@@ -13,7 +13,11 @@ export default defineConfig({
 		rehypePlugins: [
 			[
 				rehypeExternalLinks, {
-					content: {type: "text", value: " 🔗"}
+					content: {
+						type: "text",
+						value: " 🔗"
+					},
+					target: "_blank"
 				}
 			]
 		],
