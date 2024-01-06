@@ -6,5 +6,6 @@ export const SITE: Site = {
 	author: "Sean Gore",
 	description: "A sane starting point for a new Astro project",
 	title: "Astro Starter",
-	themeColour: "#162334"
+	themeColour: "#162334",
+	titleSeparator: "|"
 };

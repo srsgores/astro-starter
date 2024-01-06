@@ -6,4 +6,5 @@ export type Site = {
 	image?: string;
 	locale: string;
 	themeColour: string;
+	titleSeparator: string;
 };

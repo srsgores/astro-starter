@@ -20,16 +20,19 @@ export interface Props {
 
 
 const {
-	title = SITE.title,
+	title,
 	author = SITE.author,
 	description = SITE.description,
 	image = SITE.image,
-	canonicalURL = new URL(Astro.url.pathname, Astro.site).href
+	canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+	titleSeparator = SITE.titleSeparator
 } = Astro.props;
+
+const formattedTitle: string = title ? `${title} ${titleSeparator} ${SITE.title}` : SITE.title;
 
 const previewImage = new URL(image ?? generateOGImage({
 	breadcrumbsText: description,
-	titleText: title,
+	titleText: formattedTitle,
 	image
 }), Astro.url.origin).href;
 ---
@@ -44,14 +47,14 @@ const previewImage = new URL(image ?? generateOGImage({
 		<meta name="generator" content={Astro.generator}/>
 
 		<!-- General Meta Tags -->
-		<title>{title}</title>
-		<meta name="title" content={title}/>
+		<title>{formattedTitle}</title>
+		<meta name="title" content={formattedTitle}/>
 		<meta name="description" content={description}/>
 		<meta name="author" content={author}/>
 		<link rel="sitemap" href="/sitemap-index.xml"/>
 
 		<!-- Open Graph / Facebook -->
-		<meta property="og:title" content={title}/>
+		<meta property="og:title" content={formattedTitle}/>
 		<meta property="og:description" content={description}/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:url" content={canonicalURL}/>
@@ -60,7 +63,7 @@ const previewImage = new URL(image ?? generateOGImage({
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image"/>
 		<meta property="twitter:url" content={canonicalURL}/>
-		<meta property="twitter:title" content={title}/>
+		<meta property="twitter:title" content={formattedTitle}/>
 		<meta property="twitter:description" content={description}/>
 		<meta property="twitter:image" content={previewImage}/>
 
